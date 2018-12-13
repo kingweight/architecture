@@ -1,0 +1,21 @@
+server:
+  port: 50102
+spring:
+  application:
+    name: provider-6f
+eureka:
+  instance:
+    instance-id: instance-id-provider-6f
+    hostname: localhost
+    prefer-ip-address: true
+    metadata-map:
+      zone: zone-6F
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    region: DaLian
+    availability-zones:
+      DaLian: zone-6F,zone-7F
+    service-url:
+      zone-6F: http://localhost:50100/eureka
+      zone-7F: http://localhost:50200/eureka
