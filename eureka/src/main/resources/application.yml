@@ -1,0 +1,27 @@
+server:
+  port: 50100
+spring:
+  application:
+    name: eureka-dalian-6F
+eureka:
+  instance:
+    instance-id: instance-id-eureka-dalian-6F
+    hostname: localhost
+    metadata-map:
+      zone: zone-6F
+    prefer-ip-address: true
+    instance-enabled-onit: false
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    prefer-same-zone-eureka: true
+    region: DaLian
+    availability-zones:
+      DaLian: zone-6F,zone-7F
+    service-url:
+      zone-6F: http://localhost:50100/eureka
+      zone-7F: http://localhost:50200/eureka
+  server:
+    enable-self-preservation: true

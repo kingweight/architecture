@@ -1,0 +1,11 @@
+server:
+  port: 50500
+spring:
+  application:
+    name: king-zuul
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    service-url:
+      defaultZone: http://localhost:50100/eureka
